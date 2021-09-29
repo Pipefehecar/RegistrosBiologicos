@@ -12,6 +12,7 @@ class RegistroBiologico extends Model
     protected $table = "registros_biologicos";
 
     protected $fillable = [
+      'especie',
       'familia',
       'nombre_comun',
       'proyecto',

@@ -17,25 +17,28 @@ class RegistroController extends Controller
         }
     
         public function create(Request $request){
-          $data['especie'] = $request['especie'];
-          $data['familia'] = $request['familia'];
-          $data['nombre_comun'] = $request['nombre_comun'];
-          $data['proyecto'] = $request['proyecto'];
-          $data['base del registro'] = $request['base del registro'];
-          $data['identificacion_year'] = $request['email'];
-          $data['departamento'] = $request['departamento'];
-          $data['municipio'] = $request['municipio'];
-          $data['localidad'] = $request['localidad'];
-          $data['latitud'] = $request['latitud'];
-          $data['longitud'] = $request['longitud'];
-          $data['autor'] = $request['autor'];
-          $data['fecha_captura'] = $request['fecha_captura'];
-          $data['ecoregion'] = $request['ecoregion'];
-          RegistroBiologico::create($data);
+          // return response( $request);
+          RegistroBiologico::create($request->all());
+          // $data['especie'] = $request['especie'];
+          // $data['familia'] = $request['familia'];
+          // $data['nombre_comun'] = $request['nombre_comun'];
+          // $data['proyecto'] = $request['proyecto'];
+          // $data['base del registro'] = $request['base del registro'];
+          // $data['identificacion_year'] = $request['email'];
+          // $data['departamento'] = $request['departamento'];
+          // $data['municipio'] = $request['municipio'];
+          // $data['localidad'] = $request['localidad'];
+          // $data['latitud'] = $request['latitud'];
+          // $data['longitud'] = $request['longitud'];
+          // $data['autor'] = $request['autor'];
+          // $data['fecha_captura'] = $request['fecha_captura'];
+          // $data['ecoregion'] = $request['ecoregion'];
+          // RegistroBiologico::create($data);
           return response()->json([
               'message' => "Successfully created",
               'success' => true
           ], 200);
+          
         }
     
         public function delete($id){
